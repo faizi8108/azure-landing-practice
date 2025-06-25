@@ -4,22 +4,22 @@ resource "azurerm_resource_group" "lz" {
 }
 
 module "hub_vnet" {
-  source              = "./modules/vnet"
-  vnet_name           = "hub-vnet"
-  address_space       = ["10.0.0.0/16"]
-  location            = var.location
-  resource_group_name = azurerm_resource_group.lz.name
-   subnet_name             = "hub-subnet"
+  source                  = "./modules/vnet"
+  vnet_name               = "hub-vnet"
+  address_space           = ["10.0.0.0/16"]
+  location                = var.location
+  resource_group_name     = azurerm_resource_group.lz.name
+  subnet_name             = "hub-subnet"
   subnet_address_prefixes = ["10.0.1.0/24"]
 }
 
 module "spoke_vnet" {
-  source              = "./modules/vnet"
-  vnet_name           = "spoke-vnet"
-  address_space       = ["10.1.0.0/16"]
-  location            = var.location
-  resource_group_name = azurerm_resource_group.lz.name
-   subnet_name             = "spoke-subnet"
+  source                  = "./modules/vnet"
+  vnet_name               = "spoke-vnet"
+  address_space           = ["10.1.0.0/16"]
+  location                = var.location
+  resource_group_name     = azurerm_resource_group.lz.name
+  subnet_name             = "spoke-subnet"
   subnet_address_prefixes = ["10.1.1.0/24"]
 }
 
@@ -49,7 +49,7 @@ module "nsg" {
 }
 module "keyvault" {
   source              = "./modules/keyvault"
-  kv_name             = "mykv123faizan"  # You can change the name if you want
+  kv_name             = "mykv123faizan" # You can change the name if you want
   location            = var.location
   resource_group_name = azurerm_resource_group.lz.name
 }
