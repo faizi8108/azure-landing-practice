@@ -1,7 +1,4 @@
-variable "location" {
-  default = "centralindia"
-}
-
-variable "resource_group_name" {
-  default = "lz-rg"
-}
+variable "client_id" {}
+variable "client_secret" {}
+variable "subscription_id" {}
+variable "tenant_id" {}
