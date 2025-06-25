@@ -2,7 +2,6 @@
 .terraform/
 *.tfstate
 *.tfstate.backup
-*.tfvars
 crash.log
 *.tfplan
 .terraform.lock.hcl
@@ -14,4 +13,4 @@ Thumbs.db
 # IDE files
 .vscode/
 .idea/
-terraform.tfvars
+
