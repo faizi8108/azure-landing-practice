@@ -38,8 +38,8 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan -var="location=eastus"
+        run: terraform plan -var="location=eastus" -var="resource_group_name=rg-landingzone-faizan"
 
       - name: Terraform Apply (Auto)
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -var="location=eastus"
+        run: terraform apply -auto-approve -var="location=eastus" -var="resource_group_name=rg-landingzone-faizan"
